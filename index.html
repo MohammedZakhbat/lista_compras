@@ -3,37 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./output.css">
     <title>Lista de Compras</title>
 </head>
-<body>
-    <div>
-        <h1>🛒 Producto que deseas agregar</h1>
-        <div>
-            <input type="text">
-            <button>
+<body  class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-5xl">
+        <h1 class="text-2xl font-bold mb-6 text-slate-800">🛒 Producto que deseas agregar</h1>
+        <div class="flex gap-3 mb-8">
+            <input id="productInput" type="text" placeholder="Ejemplo: Pan" class="border border-slate-300 focus:border-cyan-500 outline-none p-3 w-72 rounded-lg">
+            <button onclick="addProduct()" class="bg-cyan-500 hover:bg-cyan-600 text-white px-5 py-3 rounded-lg font-semibold transition">
                 Agregar
             </button>
-            <button>
+            <button onclick="removeProduct()" class="bg-red-500 hover:bg-red-600 text-white px-5 py-3 rounded-lg font-semibold transition">
                 Eliminar
             </button>
         </div>
 
-        <div>
-            <div>
-                <div>
-                    <ul></ul>
+        <div class="flex gap-10">
+            <div class="flex-1">
+                <div class="border rounded-xl h-80 p-4 overflow-y-auto bg-slate-50">
+                    <ul id="list" class="space-y-2"></ul>
                 </div>
-                <p>Último producto agregado:
-                    <span>Ninguno</span>
+                <p class="mt-4 text-slate-700">Último producto agregado:
+                    <span id="last" class="font-bold text-cyan-600">Ninguno</span>
                 </p>
             </div>
 
-            <div>
-                <img src="" alt="">
-                <p>
+            <div class="flex flex-col items-center justify-center flex-1">
+                <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" class="w-44 mb-4">
+                <p class="text-lg text-slate-700">
                     Número de productos en el carrito:
-                    <span>0</span>
+                    <span id="count" class="text-4xl font-bold text-cyan-600">0</span>
                 </p>
             </div>
         </div>
